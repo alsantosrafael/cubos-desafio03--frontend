@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 2em; /*Respiro para o cabeçalho*/
+  background-color: #2b7148;
+}
+.cabecalho header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /*Responsivo e ocupa todo o espaço disponível limitando-se ao tam max*/
+  max-width: 1200px;
+}
+
+.cabecalho header form {
+  align-items: center;
+}
+
+.cabecalho header form button {
+  padding: 0.5em 1.5em;
+  background-color: #04375c;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.cabecalho header form button:hover {
+  filter: invert(0.1);
+  transition-duration: 400ms;
+}
+
+.cabecalho header form input {
+  padding: 0.5em;
+  border-radius: 0.2rem;
+  margin-left: 0.5rem;
+  color: black;
+}
+.cabecalho header form input:focus {
+  background-color: rgb(233, 224, 224);
+  transition: 400ms;
+}
+.cabecalho header form label:nth-child(n + 1) {
+  margin-left: 0.8rem;
+  margin-right: 1.2rem;
+}

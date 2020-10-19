@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+  list-style-type: none;
+}
+button {
+  cursor: pointer;
+}
+p {
+  color: black;
+}
+span {
+  color: black;
+}
+
+.tabela .head-tabela {
+  width: 715px;
+  background-color: rgb(138, 185, 157);
+}
+
+.times ul li {
+  display: flex;
+  justify-content: space-between;
+}

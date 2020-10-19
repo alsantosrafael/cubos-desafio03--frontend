@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  color: #ffffff;
+}
+button {
+  cursor: pointer;
+}
+.rodada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 415px;
+  width: 100%;
+}
+
+.head-rodada {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0.5rem;
+  background-color: rgb(138, 185, 157);
+}
+
+.head-rodada button {
+  background-color: rgb(138, 185, 157);
+  text-align: center;
+  cursor: pointer;
+  max-height: 100%;
+}
+
+.head-rodada h2 {
+  color: black;
+}
+
+.jogos {
+  max-width: 415px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.jogos p {
+  align-self: center;
+  color: black;
+}
+
+.jogos ul li {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 0.5fr 0.25fr 0.25fr 0.25fr 1fr 0.25fr;
+  gap: 3rem;
+  padding: 0.2rem;
+  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
+}
+.jogos ul li span {
+  max-width: 4ch;
+  align-self: center;
+  margin: 0 auto;
+  list-style-type: none;
+  color: black;
+
+  margin-top: 0.5rem;
+}
+
+.jogo button {
+  border-radius: 50%;
+  padding: 0.2rem;
+  background-color: rgb(138, 185, 157);
+}

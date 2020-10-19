@@ -1,0 +1,11 @@
+.botoes {
+  display: flex;
+  max-width: 26px;
+}
+.botoes button {
+  background-color: rgb(138, 185, 157);
+}
+
+.botoes button img {
+  max-width: 14px;
+}

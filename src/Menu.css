@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu li {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+}
+
+.menu li + li {
+  margin-left: 1rem;
+}
+
+.menu li span {
+  margin-right: 0.5rem;
+}
+
+.times {
+  background-color: #ffffff;
+}
