@@ -53,15 +53,14 @@ button {
 .jogos ul li {
   list-style-type: none;
   display: grid;
-  grid-template-columns: 0.5fr 0.25fr 0.25fr 0.25fr 1fr 0.25fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 0.1fr 0.1fr 0.1fr 2fr 0.1fr;
+  gap: 1rem;
   padding: 0.2rem;
   align-items: center;
   /* justify-content: center;
   align-items: center; */
 }
 .jogos ul li span {
-  max-width: 4ch;
   align-self: center;
   margin: 0 auto;
   list-style-type: none;
@@ -74,4 +73,20 @@ button {
   border-radius: 50%;
   padding: 0.2rem;
   background-color: rgb(138, 185, 157);
+}
+
+@media (max-width: 1200px) {
+  .rodada {
+    margin: 0 auto;
+    max-width: 800px;
+    flex-wrap: wrap;
+  }
+  .jogos {
+    max-width: 800px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .jogos ul {
+    width: 100%;
+  }
 }

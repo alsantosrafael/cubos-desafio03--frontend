@@ -1,5 +1,4 @@
 
-
 const tabelaFormatada = [];
 const formataTabela = (time, golsFeitos, golsSofridos, pontos) => {
   const flag = tabelaFormatada.findIndex((x) => x.time === time);

@@ -24,3 +24,7 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.corpo section {
+  margin-bottom: 2rem;
+}

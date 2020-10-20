@@ -17,13 +17,38 @@ p {
 span {
   color: black;
 }
+.tabela {
+  max-width: 715px;
+  width: 100%;
+}
 
 .tabela .head-tabela {
-  width: 715px;
+  width: 100%;
   background-color: rgb(138, 185, 157);
 }
 
 .times ul li {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.times ul li span {
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem 0;
+}
+.times ul li span:first-child {
+  align-self: center;
+}
+
+.times ul li span:nth-child(2) {
+  max-width: 8ch;
+}
+
+@media (max-width: 1200px) {
+  .tabela {
+    margin: 0 auto;
+    max-width: 800px;
+  }
 }

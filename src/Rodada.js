@@ -30,7 +30,7 @@ const Rodada = (props) => {
           onClick={() => {
             setRodada(numRodada - 1);
             loadRodada();
-          }} 
+          }}
         >
           <img
             src="https://systemuicons.com/images/icons/arrow_left.svg"
@@ -43,7 +43,7 @@ const Rodada = (props) => {
           onClick={() => {
             setRodada(numRodada + 1);
             loadRodada();
-          }} 
+          }}
         >
           <img
             src="https://systemuicons.com/images/icons/arrow_right.svg"
@@ -67,7 +67,7 @@ const Rodada = (props) => {
                 </span>
                 <span>{jogo.time_visitante}</span>
                 <button
-                  hidden={logado ? true : false}
+                  hidden={!logado ? true : false}
                   onClick={(event) => {
                     event.target.setAttribute(
                       "src",
@@ -84,6 +84,8 @@ const Rodada = (props) => {
                       //Permitir a edição, armazenar o dado editado, Fazer a requisição de post e alterar no banco de dados, atualizar minha tabela e rodada. Setar imagem para caneta
                       //   const conteudo =
                       //   fazerRequisicaoComBody(`https://desafio-3-back-cubos-academy.herokuapp.com/jogos/${numRodada}`, 'POST',)
+                      //ternario com span e input
+                      //Componentizar o li do map para ter maior controle sobre seu estado
                     }
                   }}
                 >
