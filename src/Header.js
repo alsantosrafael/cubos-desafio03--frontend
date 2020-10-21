@@ -20,7 +20,7 @@ const Header = (props) => {
               type="email"
               placeholder="Insira seu e-mail"
               title="seuemail@seudominio.com"
-              hidden={logado ? true : false}
+              //   hidden={logado ? true : false
               value={email}
               onInput={(event) => setEmail(event.target.value)}
             ></input>

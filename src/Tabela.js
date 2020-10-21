@@ -1,41 +1,9 @@
 import React from "react";
 import "./Tabela.css";
 import Menu from "./Menu";
+import organizaTabela from "./utils/organizaTabela";
+const { fazerRequisicaoComBody } = require("./utils/fetchJson");
 
-const { fetchJson, fazerRequisicaoComBody } = require("./utils/fetchJson");
-
-const organizaTabela = (nome, tipo, times) => {
-  if (nome === "POS") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-
-  if (nome === "Time") {
-    tipo === "cres"
-      ? times.sort((a, b) => a.localeCompare(b))
-      : times.sort((a, b) => b.localeCompare(a));
-  }
-  if (nome === "PTS") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "E") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "V") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "D") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "GF") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "GS") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-  if (nome === "SG") {
-    tipo === "cres" ? times.sort((a, b) => a - b) : times.sort((a, b) => b - a);
-  }
-};
 const Tabela = () => {
   const [times, setTimes] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -43,12 +11,14 @@ const Tabela = () => {
 
   const loadJogos = () => {
     setLoading(true);
-    fetchJson(
-      "https://desafio-3-back-cubos-academy.herokuapp.com/classificacao"
-    ).then((resposta) => {
-      setTimes(resposta.dados);
-      setLoading(false);
-    });
+
+    fazerRequisicaoComBody("http://localhost:1306/classificacao", "GET")
+      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        console.log(resposta);
+        setTimes(resposta.dados);
+        setLoading(false);
+      });
   };
 
   React.useEffect(() => {

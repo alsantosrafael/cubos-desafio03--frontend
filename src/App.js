@@ -2,8 +2,8 @@ import React from "react";
 import Header from "./Header";
 import Rodada from "./Rodada";
 import Tabela from "./Tabela";
-import fetchJson from "./utils/fetchJson";
-// import './App.css';
+
+
 
 function App() {
   const [logado, setLogado] = React.useState(); //Melhor substituir por um objeto com atributo

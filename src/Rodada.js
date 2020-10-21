@@ -10,12 +10,13 @@ const Rodada = (props) => {
 
   const loadRodada = () => {
     setLoading(true);
-    fetchJson(
-      `https://desafio-3-back-cubos-academy.herokuapp.com/jogos/${numRodada}`
-    ).then((resposta) => {
-      setJogos(resposta.dados);
-      setLoading(false);
-    });
+
+    fazerRequisicaoComBody(`http://localhost:1306/jogos/${numRodada}`, "GET")
+      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        setJogos(resposta.dados);
+        setLoading(false);
+      });
   };
 
   React.useEffect(() => {

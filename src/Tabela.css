@@ -13,6 +13,8 @@ button {
 }
 p {
   color: black;
+  text-align: center;
+  padding: 0.5rem;
 }
 span {
   color: black;
@@ -25,6 +27,7 @@ span {
 .tabela .head-tabela {
   width: 100%;
   background-color: rgb(138, 185, 157);
+  padding: 0.5rem;
 }
 
 .times ul li {
@@ -36,6 +39,7 @@ span {
 .times ul li span {
   text-align: center;
   width: 100%;
+
   padding: 0.25rem 0;
 }
 .times ul li span:first-child {
@@ -43,7 +47,16 @@ span {
 }
 
 .times ul li span:nth-child(2) {
-  max-width: 8ch;
+  max-width: 12ch;
+}
+
+.times ul li span:nth-child(3) {
+  margin-left: 2rem;
+  max-width: 4ch;
+}
+.times ul li span:nth-child(4) {
+  margin-left: 1rem;
+  max-width: 4ch;
 }
 
 @media (max-width: 1200px) {

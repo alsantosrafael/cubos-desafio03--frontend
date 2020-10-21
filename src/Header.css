@@ -46,7 +46,7 @@
   color: black;
 }
 .cabecalho header form input:focus {
-  background-color: rgb(233, 224, 224);
+  background-color: rgb(214, 214, 214);
   transition: 400ms;
 }
 .cabecalho header form label:nth-child(n + 1) {
