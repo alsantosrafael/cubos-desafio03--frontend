@@ -1,5 +1,5 @@
 import React from "react";
-import "./css_components/Botoes.css";
+import "../css_components/Botoes.css";
 
 const Botoes = (props) => {
   const { hiddenDec, hiddenCre } = props;

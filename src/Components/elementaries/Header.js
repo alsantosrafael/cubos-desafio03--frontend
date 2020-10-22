@@ -1,6 +1,6 @@
 import React from "react";
-import "./css_components/Header.css";
-const { fazerRequisicaoComBody } = require("../utils/fetchJson");
+import "../css_components/Header.css";
+const { fazerRequisicaoComBody } = require("../../utils/fetchJson");
 
 const Header = (props) => {
   const { logado, setLogado } = props;

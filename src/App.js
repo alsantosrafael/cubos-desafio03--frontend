@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Components/Header";
+import Header from "./Components/elementaries/Header";
 import Rodada from "./Components/Rodada";
 import Tabela from "./Components/Tabela";
 const { fazerRequisicaoComBody } = require("./utils/fetchJson");

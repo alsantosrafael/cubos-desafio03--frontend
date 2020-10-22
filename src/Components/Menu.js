@@ -1,6 +1,6 @@
 import React from "react";
 import "./css_components/Menu.css";
-import Botoes from "./Botoes";
+import Botoes from "./elementaries/Botoes";
 const Menu = (props) => {
   const { filtro, setFiltro } = props;
 
