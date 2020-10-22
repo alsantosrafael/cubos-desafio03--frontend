@@ -4,20 +4,22 @@ import "./Rodada.css";
 const { fazerRequisicaoComBody } = require("./utils/fetchJson");
 
 const Rodada = (props) => {
-  const { numRodada, setRodada, logado, setLogado } = props;
-  const [jogosAtuais, setJogos] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
+  const {
+    numRodada,
+    setRodada,
+    logado,
+    setLogado,
+    loadRodada,
+    jogosAtuais,
+    setJogosAtuais,
+    loadingRodada,
+    setLoadingRodada,
+    loadJogos,
+  } = props;
 
-  const loadRodada = () => {
-    setLoading(true);
-
-    fazerRequisicaoComBody(`http://localhost:1306/jogos/${numRodada}`, "GET")
-      .then((resposta) => resposta.json())
-      .then((resposta) => {
-        setJogos(resposta.dados);
-        setLoading(false);
-      });
-  };
+  const [editandoId, setEditandoId] = React.useState("");
+  const [golsCasa, setGolsCasa] = React.useState("");
+  const [golsVisitante, setGolsVisitante] = React.useState("");
 
   React.useEffect(() => {
     loadRodada();
@@ -54,44 +56,67 @@ const Rodada = (props) => {
       </header>
 
       <section className="jogos">
-        {loading ? (
+        {loadingRodada ? (
           <p style={{ padding: "0.5rem" }}>Carregando...</p>
         ) : (
           <ul>
             {jogosAtuais.map((jogo) => (
               <li key={jogo.id} className="jogo">
                 <span>{jogo.time_casa}</span>
-                <span style={{ fontSize: "1.5rem" }}>{jogo.gols_casa}</span>
+                {editandoId === jogo.id && logado ? (
+                  <input
+                    value={golsCasa}
+                    onInput={(event) => setGolsCasa(event.target.value)}
+                  ></input>
+                ) : (
+                  <span style={{ fontSize: "1.5rem" }}>{jogo.gols_casa}</span>
+                )}
                 <span style={{ fontSize: "0.8rem" }}>x</span>
-                <span style={{ fontSize: "1.5rem" }}>
-                  {jogo.gols_visitante}
-                </span>
+
+                {editandoId === jogo.id && logado ? (
+                  <input
+                    value={golsVisitante}
+                    onInput={(event) => setGolsVisitante(event.target.value)}
+                  ></input>
+                ) : (
+                  <span style={{ fontSize: "1.5rem" }}>
+                    {jogo.gols_visitante}
+                  </span>
+                )}
                 <span>{jogo.time_visitante}</span>
                 <button
-                  hidden={!logado ? true : false}
-                  onClick={(event) => {
-                    event.target.setAttribute(
-                      "src",
-                      "https://systemuicons.com/images/icons/check.svg"
-                    );
-                    if (
-                      event.target.getAttribute("src") ===
-                      "https://systemuicons.com/images/icons/check.svg"
-                    ) {
-                      event.target.setAttribute(
-                        "src",
-                        "https://systemuicons.com/images/icons/check.svg"
-                      );
-                      //Permitir a edição, armazenar o dado editado, Fazer a requisição de post e alterar no banco de dados, atualizar minha tabela e rodada. Setar imagem para caneta
-                      //   const conteudo =
-                      //   fazerRequisicaoComBody(`https://desafio-3-back-cubos-academy.herokuapp.com/jogos/${numRodada}`, 'POST',)
-                      //ternario com span e input
-                      //Componentizar o li do map para ter maior controle sobre seu estado
+                  hidden={!logado}
+                  onClick={() => {
+                    if (editandoId) {
+                      setEditandoId("");
+                      setGolsVisitante("");
+                      setGolsCasa("");
+                      fazerRequisicaoComBody(
+                        `http://localhost:1306/jogos`,
+                        "POST",
+                        {
+                          id: Number(jogo.id),
+                          gols_casa: Number(golsCasa),
+                          gols_visitante: Number(golsVisitante),
+                        },
+                        logado.token
+                      ).then(() => {
+                        loadRodada();
+                        loadJogos();
+                      });
+                    } else {
+                      setEditandoId(jogo.id);
+                      setGolsVisitante(jogo.gols_visitante);
+                      setGolsCasa(jogo.gols_casa);
                     }
                   }}
                 >
                   <img
-                    src="https://systemuicons.com/images/icons/pen.svg"
+                    src={
+                      editandoId === jogo.id
+                        ? "https://systemuicons.com/images/icons/check.svg"
+                        : "https://systemuicons.com/images/icons/pen.svg"
+                    }
                     alt="botao edição/confirmação"
                   ></img>
                 </button>
@@ -105,7 +130,3 @@ const Rodada = (props) => {
 };
 
 export default Rodada;
-//Adicionar onClick no botão de edição de jogos
-//A edição só deve aparecer quando o usuário logar
-//Após a edição os dados tem de ser atualizados na tabela dos jogos
-//e na tabela de rodadas tb

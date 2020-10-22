@@ -74,6 +74,16 @@ button {
   padding: 0.2rem;
   background-color: rgb(138, 185, 157);
 }
+.jogo input {
+  max-width: 1.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
+
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1.5rem;
+}
 
 @media (max-width: 1200px) {
   .rodada {

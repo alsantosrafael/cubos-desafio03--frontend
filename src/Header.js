@@ -46,7 +46,7 @@ const Header = (props) => {
               } else {
                 try {
                   const respostaLogin = await fazerRequisicaoComBody(
-                    "https://desafio-3-back-cubos-academy.herokuapp.com/auth",
+                    "http://localhost:1306/auth",
                     "POST",
                     { email: email, password: senha }
                   ).then((resposta) => resposta.json());
