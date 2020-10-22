@@ -8,26 +8,29 @@ const Tabela = (props) => {
     jogos,
     setJogos,
     times,
-    setTimes,
     loadingTabela,
     setLoadingTabela,
     loadJogos,
+    ordenaJogos,
   } = props;
 
   const [filtro, setFiltro] = React.useState({ nome: "POS", tipo: "cre" });
 
-  React.useEffect(() => {
-    loadJogos();
-  }, []);
+  const applyFilter = (nome, direcao) => {
+    setFiltro({ nome: nome, tipo: direcao });
+  };
+
 
   React.useEffect(() => {
-    setTimes(times.sort(organizaTabela(filtro.nome, filtro.tipo, times)));
-  }, [filtro]);
+    const tabelaOrganizada = organizaTabela(filtro.nome, filtro.tipo, times);
+    ordenaJogos(tabelaOrganizada);
+    console.log(filtro);
+  }, [filtro, times, ordenaJogos]);
 
   return (
     <article className="tabela">
       <header className="head-tabela">
-        <Menu filtro={filtro} setFiltro={setFiltro} />
+        <Menu filtro={filtro} applyFilter={applyFilter} />
       </header>
       <section className="times">
         {loadingTabela ? (

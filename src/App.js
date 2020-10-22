@@ -39,6 +39,15 @@ function App() {
       });
   };
 
+  const ordenaJogos = (timesOrganizados) => {
+	setTimes(timesOrganizados);
+  };
+
+  React.useEffect(() => {
+    loadRodada();
+    loadJogos();
+  }, []);
+
   return (
     <>
       <Header logado={logado} setLogado={setLogado} />
@@ -66,6 +75,7 @@ function App() {
             loadingTabela={loadingTabela}
             setLoadingTabela={setLoadingTabela}
             loadJogos={loadJogos}
+            ordenaJogos={ordenaJogos}
           />
         </section>
       </main>

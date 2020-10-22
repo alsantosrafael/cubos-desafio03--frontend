@@ -2,12 +2,8 @@ import React from "react";
 import "./css_components/Menu.css";
 import Botoes from "./elementaries/Botoes";
 const Menu = (props) => {
-  const { filtro, setFiltro } = props;
+  const { filtro, applyFilter } = props;
 
-  const applyFilter = (tipo, direcao) => {
-    setFiltro({ nome: "POS", tipo: "cre" });
-    setFiltro({ nome: tipo, tipo: direcao });
-  };
   return (
     <ul className="menu">
       <li>

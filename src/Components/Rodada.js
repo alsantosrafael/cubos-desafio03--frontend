@@ -21,10 +21,6 @@ const Rodada = (props) => {
   const [golsCasa, setGolsCasa] = React.useState("");
   const [golsVisitante, setGolsVisitante] = React.useState("");
 
-  React.useEffect(() => {
-    loadRodada();
-  }, []);
-
   return (
     <article className="rodada">
       <header className="head-rodada">
