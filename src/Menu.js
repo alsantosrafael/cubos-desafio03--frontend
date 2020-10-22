@@ -5,6 +5,7 @@ const Menu = (props) => {
   const { filtro, setFiltro } = props;
 
   const applyFilter = (tipo, direcao) => {
+	setFiltro({ nome: "POS", tipo: "cre" })
     setFiltro({ nome: tipo, tipo: direcao });
   };
   return (
