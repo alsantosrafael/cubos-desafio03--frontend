@@ -1,3 +1,8 @@
+
+<p align="center">
+   <img src="https://blog.cubos.io/content/images/2019/02/cubosteste-1.png" />
+</p>
+
 Desafio de Frontend do módulo 03 - Cubos Academy: Programação do Zero
 ================= 
 
