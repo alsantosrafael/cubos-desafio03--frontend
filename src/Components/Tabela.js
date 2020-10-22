@@ -1,8 +1,7 @@
 import React from "react";
-import "./Tabela.css";
+import "./css_components/Tabela.css";
 import Menu from "./Menu";
-import organizaTabela from "./utils/organizaTabela";
-const { fazerRequisicaoComBody } = require("./utils/fetchJson");
+import organizaTabela from "../utils/organizaTabela";
 
 const Tabela = (props) => {
   const {

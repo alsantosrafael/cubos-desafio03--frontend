@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
-import Rodada from "./Rodada";
-import Tabela from "./Tabela";
+import Header from "./Components/Header";
+import Rodada from "./Components/Rodada";
+import Tabela from "./Components/Tabela";
 const { fazerRequisicaoComBody } = require("./utils/fetchJson");
 
 function App() {
-  const [logado, setLogado] = React.useState(); //Melhor substituir por um objeto com atributo
+  const [logado, setLogado] = React.useState();
   const [numRodada, setRodada] = React.useState(1);
   const [jogos, setJogos] = React.useState(null);
   const [times, setTimes] = React.useState([]);
@@ -30,7 +30,6 @@ function App() {
     fazerRequisicaoComBody("http://localhost:1306/classificacao", "GET")
       .then((resposta) => resposta.json())
       .then((resposta) => {
-        //Fazer um map, colocar um id no objeto do time
         const novoArray = resposta.dados.map((obj, index) => ({
           ...obj,
           id: index + 1,
@@ -40,7 +39,6 @@ function App() {
       });
   };
 
-  //Tenho de atrelar esse array vazio à alguma variável que perceba mudança da tabela
   return (
     <>
       <Header logado={logado} setLogado={setLogado} />

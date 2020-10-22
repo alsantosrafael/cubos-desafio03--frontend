@@ -1,7 +1,7 @@
 import React from "react";
-import "./Rodada.css";
+import "./css_components/Rodada.css";
 
-const { fazerRequisicaoComBody } = require("./utils/fetchJson");
+const { fazerRequisicaoComBody } = require("../utils/fetchJson");
 
 const Rodada = (props) => {
   const {

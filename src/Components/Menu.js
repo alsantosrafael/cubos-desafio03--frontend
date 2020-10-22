@@ -1,11 +1,11 @@
 import React from "react";
-import "./Menu.css";
+import "./css_components/Menu.css";
 import Botoes from "./Botoes";
 const Menu = (props) => {
   const { filtro, setFiltro } = props;
 
   const applyFilter = (tipo, direcao) => {
-	setFiltro({ nome: "POS", tipo: "cre" })
+    setFiltro({ nome: "POS", tipo: "cre" });
     setFiltro({ nome: tipo, tipo: direcao });
   };
   return (

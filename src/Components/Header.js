@@ -1,6 +1,6 @@
 import React from "react";
-import "./Header.css";
-const { fazerRequisicaoComBody } = require("./utils/fetchJson");
+import "./css_components/Header.css";
+const { fazerRequisicaoComBody } = require("../utils/fetchJson");
 
 const Header = (props) => {
   const { logado, setLogado } = props;
@@ -20,7 +20,6 @@ const Header = (props) => {
               type="email"
               placeholder="Insira seu e-mail"
               title="seuemail@seudominio.com"
-              //   hidden={logado ? true : false
               value={email}
               onInput={(event) => setEmail(event.target.value)}
             ></input>
