@@ -41,7 +41,7 @@ Tecnologias e Dependências
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
-  <li><a href="https://pt-br.reactjs.org/">ReactJS</a></li>
+  <li><a href="https://pt-br.reactjs.org/" target="_blank">ReactJS</a></li>
 
 </ul>
 
