@@ -20,12 +20,11 @@ const Tabela = (props) => {
     setFiltro({ nome: nome, tipo: direcao });
   };
 
+  const tabelaOrganizada = organizaTabela(filtro.nome, filtro.tipo, times);
 
   React.useEffect(() => {
-    const tabelaOrganizada = organizaTabela(filtro.nome, filtro.tipo, times);
-    ordenaJogos(tabelaOrganizada);
-    console.log(filtro);
-  }, [filtro, times, ordenaJogos]);
+	  ordenaJogos(tabelaOrganizada)
+  },[tabelaOrganizada])
 
   return (
     <article className="tabela">
