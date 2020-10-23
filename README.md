@@ -15,8 +15,8 @@ pode ser encontrada <a href="https://github.com/alsantosrafael/cubos-desafio03--
 Tabela de Conteúdos
 ---
 <p align="center>
- <a href="#uso">Instruções de uso</a> •
- <a href="#tecnologias">Tecnologias</a> •
+ <a href="#Instrucoes-de-uso">Instruções de uso</a> •
+ <a href="#tecnologias-e-dependencias">Tecnologias e dependências</a>
  <a href="#overview">Overview</a> •
  <a href="#autor">Autor</a> •
 </p>
