@@ -89,7 +89,7 @@ const Rodada = (props) => {
                       setGolsCasa("");
                       fazerRequisicaoComBody(
                         `http://localhost:1306/jogos`,
-                        "POST",
+                        "PUT",
                         {
                           id: Number(jogo.id),
                           gols_casa: Number(golsCasa),
