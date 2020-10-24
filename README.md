@@ -13,13 +13,13 @@ Brasileirão de 2019 e da tabela de classificação final dos times. Todos os da
 pode ser encontrada <a href="https://github.com/alsantosrafael/cubos-desafio03--backend">aqui</a>.<p>
 
 Tabela de Conteúdos
----
-<p align="center>
- <a href="#uso">Instruções de uso</a> •
- <a href="#tecnologias">Tecnologias</a> •
- <a href="#overview">Overview</a> •
- <a href="#autor">Autor</a> •
-</p>
+---		 
+<!--ts-->
+   * [Tecnologias e Dependências](#tecnologias-e-dependencias)
+   * [Instruções de uso](#instrucoes-de-uso)
+   * [Overview](#overview)
+   * [Autor](#autor)
+<!--te-->
 
 Status do projeto
 ---
@@ -31,7 +31,7 @@ Instruções de uso
 ---
 1. Clone o repositorio de link https://github.com/alsantosrafael/cubos-desafio03--backend
 2. Abra a pasta do repositório clonado no VSCode.
-3. Execute o comando 'npm install' para instalar todas as depéndências que o projeto necessita.
+3. Execute o comando ```npm install``` para instalar todas as depéndências que o projeto necessita.
 4. Por fim, execute npm start no terminal, para rodar a aplicação.
 5. Aproveite.
 
@@ -41,7 +41,7 @@ Tecnologias e Dependências
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
-  <li><a href="https://pt-br.reactjs.org/">ReactJS</a></li>
+  <li><a href="https://pt-br.reactjs.org/" target="_blank">ReactJS</a></li>
 
 </ul>
 
