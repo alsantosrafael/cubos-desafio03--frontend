@@ -23,8 +23,8 @@ const Tabela = (props) => {
   const tabelaOrganizada = organizaTabela(filtro.nome, filtro.tipo, times);
 
   React.useEffect(() => {
-	  ordenaJogos(tabelaOrganizada)
-  },[tabelaOrganizada])
+    ordenaJogos(tabelaOrganizada);
+  }, [tabelaOrganizada]);
 
   return (
     <article className="tabela">
@@ -37,7 +37,16 @@ const Tabela = (props) => {
         ) : (
           <ul>
             {times.map((time) => (
-              <li key={time.nome}>
+              <li
+                key={time.nome}
+                style={
+                  time.id > 16 && time.id <= 20
+                    ? { backgroundColor: "palevioletred" }
+                    : time.id >= 1 && time.id < 5
+                    ? { backgroundColor: "springGreen" }
+                    : { backgroundColor: "" }
+                }
+              >
                 <span>{time.id}</span>
                 <span>{time.nome}</span>
                 <span>{time.pontos}</span>
