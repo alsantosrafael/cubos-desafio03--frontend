@@ -53,7 +53,7 @@ const Tabela = (props) => {
                 <span>{time.empates}</span>
                 <span>{time.vitorias}</span>
                 <span>{time.derrotas}</span>
-                <span>{time.golsFeitos}</span>
+                <span>{time.golsFeitos}</ span>
                 <span>{time.golsSofridos}</span>
                 <span>{time.golsFeitos - time.golsSofridos}</span>
               </li>

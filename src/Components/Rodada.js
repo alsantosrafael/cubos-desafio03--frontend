@@ -116,6 +116,28 @@ const Rodada = (props) => {
                     alt="botao edição/confirmação"
                   ></img>
                 </button>
+                <button
+                  hidden={!logado}
+                  onClick={() => {
+                    setEditandoId("");
+                    fazerRequisicaoComBody(
+                      `http://localhost:1306/jogos`,
+                      "DELETE",
+                      {
+                        idJogo: Number(jogo.id),
+                      },
+                      logado.token
+                    ).then(() => {
+                      loadRodada();
+                      loadJogos();
+                    });
+                  }}
+                >
+                  <img
+                    src="https://systemuicons.com/images/icons/cross.svg"
+                    alt="botao deletar"
+                  ></img>
+                </button>
               </li>
             ))}
           </ul>
