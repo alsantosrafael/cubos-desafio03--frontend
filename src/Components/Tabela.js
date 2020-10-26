@@ -49,11 +49,20 @@ const Tabela = (props) => {
               >
                 <span>{time.id}</span>
                 <span>{time.nome}</span>
-                <span>{time.pontos}</span>
+                <span
+                  style={
+                    time.id === 19
+                      ? { marginLeft: "auto" }
+                      : { marginLeft: "1.5rem" }
+                  }
+                >
+                  {" "}
+                  {time.pontos}
+                </span>
                 <span>{time.empates}</span>
                 <span>{time.vitorias}</span>
                 <span>{time.derrotas}</span>
-                <span>{time.golsFeitos}</ span>
+                <span>{time.golsFeitos}</span>
                 <span>{time.golsSofridos}</span>
                 <span>{time.golsFeitos - time.golsSofridos}</span>
               </li>

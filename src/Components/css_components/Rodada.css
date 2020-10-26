@@ -49,14 +49,20 @@ button {
   align-self: center;
   color: black;
 }
+.jogos ul {
+  display: flex;
+  flex-direction: column;
+}
 
 .jogos ul li {
   list-style-type: none;
   display: grid;
+  max-height: 40px;
   grid-template-columns: 2fr 0.1fr 0.1fr 0.1fr 2fr 0.1fr 0.1fr;
   gap: 1rem;
   padding: 0.2rem;
   align-items: center;
+
   /* justify-content: center;
   align-items: center; */
 }
@@ -65,8 +71,6 @@ button {
   margin: 0 auto;
   list-style-type: none;
   color: black;
-
-  margin-top: 0.5rem;
 }
 
 .jogo button {
@@ -83,6 +87,13 @@ button {
   background-color: white;
   border: 1px solid black;
   font-size: 1.5rem;
+}
+
+.jogos ul > button {
+  margin-top: 1rem;
+  padding: 0.25rem;
+  width: 100%;
+  background-color: rgb(138, 185, 157);
 }
 
 @media (max-width: 1200px) {
