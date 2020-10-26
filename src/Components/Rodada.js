@@ -20,7 +20,7 @@ const Rodada = (props) => {
   const [editandoId, setEditandoId] = React.useState("");
   const [golsCasa, setGolsCasa] = React.useState("");
   const [golsVisitante, setGolsVisitante] = React.useState("");
-  const [adicionando, setAdicionando] = React.useState(false);
+
   return (
     <article className="rodada">
       <header className="head-rodada">
