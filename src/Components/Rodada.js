@@ -88,7 +88,7 @@ const Rodada = (props) => {
                       setGolsVisitante("");
                       setGolsCasa("");
                       fazerRequisicaoComBody(
-                        `http://localhost:1306/jogos`,
+                        `${process.env.REACT_APP_API_URL}/jogos`,
                         "PUT",
                         {
                           id: Number(jogo.id),
@@ -121,7 +121,7 @@ const Rodada = (props) => {
                   onClick={() => {
                     setEditandoId("");
                     fazerRequisicaoComBody(
-                      `http://localhost:1306/jogos`,
+                      `${process.env.REACT_APP_API_URL}/jogos`,
                       "DELETE",
                       {
                         idJogo: Number(jogo.id),

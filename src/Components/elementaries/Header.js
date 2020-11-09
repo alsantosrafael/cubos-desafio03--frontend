@@ -45,7 +45,7 @@ const Header = (props) => {
               } else {
                 try {
                   const respostaLogin = await fazerRequisicaoComBody(
-                    "http://localhost:1306/auth",
+                    `${process.env.REACT_APP_API_URL}/auth`,
                     "POST",
                     { email: email, password: senha }
                   ).then((resposta) => resposta.json());

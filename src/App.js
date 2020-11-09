@@ -16,7 +16,10 @@ function App() {
   const loadRodada = () => {
     setLoadingRodada(true);
 
-    fazerRequisicaoComBody(`http://localhost:1306/jogos/${numRodada}`, "GET")
+    fazerRequisicaoComBody(
+      `${process.env.REACT_APP_API_URL}/jogos/${numRodada}`,
+      "GET"
+    )
       .then((resposta) => resposta.json())
       .then((resposta) => {
         setJogosAtuais(resposta.dados);
@@ -27,7 +30,7 @@ function App() {
   const loadJogos = () => {
     setLoadingTabela(true);
 
-    fazerRequisicaoComBody("http://localhost:1306/classificacao", "GET")
+    fazerRequisicaoComBody(`${process.env.REACT_APP_API_URL}/classificacao`, "GET")
       .then((resposta) => resposta.json())
       .then((resposta) => {
         const novoArray = resposta.dados.map((obj, index) => ({
@@ -40,7 +43,7 @@ function App() {
   };
 
   const ordenaJogos = (timesOrganizados) => {
-	setTimes(timesOrganizados);
+    setTimes(timesOrganizados);
   };
 
   React.useEffect(() => {
